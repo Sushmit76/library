@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSubmit").click(function () {
+                var book_name = $("#name").val();
+                var copiesnumber = $("#copies").val();
+                var author_n = $("#author").val();
+                if (book_name == "" || copiesnumber == "" || author_n == "") {
+                    alert("enteries can't be blank.");
+                    return false;
+                }
+                else {
+                    alert("Successfully Registered,Press OK!")
+                    return true;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Hello Sir,Register your books here!</h2><br><br>
+    <h3>Registration Form:</h3>
+    <h4>Following details are required!</h4>
+    <form action="/register" method="post">
+        <input type="text" name="name" id="name" placeholder="BOOK NAME"><br><br>
+        <input type="text" name="copies" id="copies" placeholder="NUMBER OF COPIES"><br><br>
+        <input type="text" name="author" id="author" placeholder="AUTHOR NAME"><br><br>
+        <a href="/list">
+            <button class="btn btn-secondary" id="btnSubmit">SUBMIT</button>
+        </a><br><br>
+    </form>
+</body>
+
+</html>
